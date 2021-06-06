@@ -1,0 +1,33 @@
+// Recursive C++ program to check whether a 
+// number is palindrome or not using recursive function
+#include <bits/stdc++.h>
+using namespace std;
+int reverse(int n, int sum)
+{
+
+    // base case for reversing a number
+     if (n == 0)
+     {
+       return sum;
+     }
+     sum = (sum * 10) + (n % 10);
+     n=n/10;
+     return rev(n, sum);
+}
+int main()
+{
+    int n,temp;
+    cout<<"Enter a number to check whether it is a palindrome or not\n";
+    cin>>n;
+    temp=n;
+    int ans = rev(n, 0);
+    if (temp == ans)
+    {
+       cout<<"The number is a palindrome"<<endl;
+    }
+    else
+    {
+       cout<<"The number is not a palindrome"<<endl;
+    }
+     return 0;
+}
