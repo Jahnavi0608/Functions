@@ -1,0 +1,30 @@
+//Program to find whether a Number    
+// is Prime or not using Recursion 
+#include <bits/stdc++.h> 
+using namespace std; 
+int prime(int n, int i = 2) 
+{ 
+    // Base cases 
+    if (n <= 2) 
+        if(n==2)
+           return 1;
+        else
+           return 0;
+    if (n % i == 0) 
+        return 0; 
+    if (i * i > n) 
+        return 1; 
+    return prime(n, i + 1); 
+} 
+int main() 
+{ 
+    int n; 
+    cout<<"enter a number to find whether it is a prime or not";
+    cin>>n;
+    int result=prime(n);
+    if (result==1) 
+        cout << "the number is prime"; 
+    else
+        cout << "the number is not prime"; 
+    return 0; 
+} 
